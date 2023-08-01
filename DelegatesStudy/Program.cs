@@ -19,4 +19,6 @@ bool data=objData.myPredicateDelegate(DayOfWeek.Sunday);
 Console.WriteLine(data);
 
 
+
+
 //Console.WriteLine(ClassStudent.Sagar);
