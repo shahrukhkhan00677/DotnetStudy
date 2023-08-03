@@ -8,6 +8,7 @@ namespace EventStudy
 {
     internal class Counter
     {
+        public event EventHandler TargetReached;
          int CurrentScore { get; set; }
          int TargetScore { get; set; }
 
@@ -23,12 +24,23 @@ namespace EventStudy
              CurrentScore += b;
             Console.WriteLine(CurrentScore);
 
-            if(CurrentScore>=TargetScore)
+            if(CurrentScore>TargetScore)
             {
                 Console.WriteLine("Win");
+                OnTargetReached();
             }
             
         }
+
+        protected virtual void OnTargetReached() 
+        {
+          EventHandler handler = TargetReached;
+            if (handler != null)
+            {
+                handler(this, EventArgs.Empty);
+            }
+        }
+
 
     }
 }
