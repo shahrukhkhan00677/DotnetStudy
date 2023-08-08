@@ -17,5 +17,5 @@ ThreadStart s2 = new ThreadStart(objStudent.Work2);
 Thread thread2 = new Thread(s2);
 thread2.Name = "my thread2";
 
-thread2.Start();
 thread1.Start();
+thread2.Start();
