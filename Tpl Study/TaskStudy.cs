@@ -2,22 +2,28 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 
 namespace Tpl_Study
 {
     internal class TaskStudy
     {
-        Task objTask;
-
+       public Task ObjTask;
+        public Action myAction;
+        public Task TaskA;
 
         public  void DoWork ()
         {
             Console.WriteLine("DoWork Called");
         }
         public  TaskStudy ()
-        { 
-            objTask = new Task ();
+        {
+            myAction = DoWork;
+            ObjTask = new Task(myAction);
+            TaskA = new Task(
+                () => Console.WriteLine("Hello from TaskA")
+                ); 
 
         }
     }
