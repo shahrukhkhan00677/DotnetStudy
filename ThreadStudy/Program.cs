@@ -4,8 +4,8 @@ using ThreadStudy;
 Console.WriteLine("Thread Study");
 
 Student objStudent=new Student();
-//objStudent.Work1();
-//objStudent.Work2();
+objStudent.Work1();
+objStudent.Work2();
 
 ThreadStart s1 = new ThreadStart(objStudent.Work1);
 
@@ -17,5 +17,5 @@ ThreadStart s2 = new ThreadStart(objStudent.Work2);
 Thread thread2 = new Thread(s2);
 thread2.Name = "my thread2";
 
-thread1.Start();
-thread2.Start();
+//thread1.Start();
+//thread2.Start();
