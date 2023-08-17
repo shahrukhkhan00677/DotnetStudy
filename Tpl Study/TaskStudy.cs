@@ -12,18 +12,25 @@ namespace Tpl_Study
        public Task ObjTask;
         public Action myAction;
         public Task TaskA;
-
+      
         public  void DoWork ()
         {
-            Console.WriteLine("DoWork Called");
+            int i = 1;
+            Console.WriteLine("Do Work Called");
+            i = i + 5;
+            //Thread.Sleep(1000);
+            Console.WriteLine(i);
         }
         public  TaskStudy ()
         {
             myAction = DoWork;
             ObjTask = new Task(myAction);
-            TaskA = new Task(
+            /*TaskA = new Task(
                 () => Console.WriteLine("Hello from TaskA")
-                ); 
+                ); */
+
+            TaskA = new Task(myAction);
+
 
         }
     }
